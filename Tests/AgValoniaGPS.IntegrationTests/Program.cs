@@ -17,7 +17,7 @@ using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Headless;
 using Avalonia.Media.Imaging;
-using Avalonia.ReactiveUI;
+using ReactiveUI.Avalonia;
 using Avalonia.Threading;
 using AgValoniaGPS.Desktop;
 using AgValoniaGPS.Desktop.Views;
@@ -92,7 +92,7 @@ sealed class Program
                 builder = builder.UsePlatformDetect();
 
             builder.WithInterFont()
-                .UseReactiveUI()
+                .UseReactiveUI(_ => { })
                 .StartWithClassicDesktopLifetime(
                     args.Where(a => a != "--headless").ToArray());
         }
